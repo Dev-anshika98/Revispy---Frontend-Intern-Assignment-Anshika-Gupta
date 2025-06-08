@@ -19,7 +19,7 @@ const Categories: React.FC = () => {
   const fetchCategories = async (page: number) => {
     try {
       setLoading(true);
-      const response = await axios.get(`https://revispy-frontend-intern-assignment-hc89.onrender.com/api/categories?page=${page}`);
+      const response = await axios.get(`http://localhost:5000/api/categories?page=${page}`);
       const { categories, totalPages, userInterests } = response.data;
       
       setCategories(categories);
@@ -45,7 +45,7 @@ const Categories: React.FC = () => {
     setSelectedCategories(newSelectedCategories);
 
     try {
-      await axios.post('https://revispy-frontend-intern-assignment-hc89.onrender.com/api/categories/interests', {
+      await axios.post('http://localhost:5000/api/categories/interests', {
         categoryIds: newSelectedCategories,
       });
     } catch (error) {
