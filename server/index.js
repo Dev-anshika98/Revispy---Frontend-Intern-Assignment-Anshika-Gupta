@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // replace with your actual frontend link
+  origin: 'https://revispy-frontend-intern-assignment.vercel.app', // replace with your actual frontend link
   credentials: true // if using cookies or authorization headers
 }));
 app.use(express.json());
